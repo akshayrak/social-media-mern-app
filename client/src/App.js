@@ -2,15 +2,17 @@ import React from 'react'
 import {Container,AppBar,Typography,Grow,Grid} from "@mui/material"
 import Posts from './components/posts/Posts';
 import Form from './components/form/Form';
+import "./app.css"
+import useStyles from './styles';
 
 const App = () => {
     const {REACT_APP_ICON_IMAGE}=process.env;
-
+    const classes = useStyles();
     return (
-        <Container maxWidth="lg">
-            <AppBar position="static" color="inherit">
-                <Typography variant="h2" align="center">Title of the App</Typography>
-                <img src={REACT_APP_ICON_IMAGE} alt="someImage" height="60" width="60" />
+        <Container maxWidth="lg" className="app">
+            <AppBar className={classes.appbar} position="static" color="inherit">
+                <Typography className={classes.heading} variant="h2" align="center">Title</Typography>
+                <img className={classes.image} src={REACT_APP_ICON_IMAGE} alt="someImage" height="60" width="60" />
             </AppBar>
             <Grow in>
                 <Container>
